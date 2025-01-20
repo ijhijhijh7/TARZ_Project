@@ -20,6 +20,14 @@ public class CoolTimeView : AnimatedUI
         rectTransform.anchoredPosition = positionOffset;
     }
 
+    private void Start()
+    {
+        for (int i = 0; i < timeText.Length; i++)
+        {
+            EndCoolTime(i);
+        }
+    }
+
     public void StartCoolTime(int num)
     {
         if (!isStart[num])

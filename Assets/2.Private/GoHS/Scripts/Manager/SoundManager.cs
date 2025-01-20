@@ -111,9 +111,15 @@ public class SoundManager : MonoBehaviour
 
     // 위치기반 SFX 음원 재생 
 
+
+    public void InstanceSFX(AudioClip clip)
+    {
+        sfx.PlayOneShot(clip);
+
     public void PlaySFXMonster(E_Audio type)
     {
         monsterSound.PlayOneShot(clips[type]);
+
     }
 }
 

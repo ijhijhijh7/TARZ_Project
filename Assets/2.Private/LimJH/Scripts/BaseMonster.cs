@@ -15,7 +15,7 @@ public class BaseMonster : MonoBehaviour, IDamagable, IPushable, IPooledObject
 
     public IAttackRange AttackType { get; private set; } = IAttackRange.Melee;*/
 
-    protected InGameUI inGameUI;
+    public InGameUI inGameUI;
 
     [SerializeField] private GameObject projectilePrefab;
 
