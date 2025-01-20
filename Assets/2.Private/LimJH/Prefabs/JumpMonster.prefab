@@ -280,7 +280,7 @@ MonoBehaviour:
   attackCount: 0
   specialAttackCount: 0
   jumpAttackCoolTime: 5
-  shockwavePrefab: {fileID: 45157075010272663, guid: 7de8c3455b9c9574cb5aeb21c17402f3,
+  shockwavePrefab: {fileID: 3819848293822874369, guid: c06e1e6e7062473479a24483aa145db8,
     type: 3}
 --- !u!114 &8885023869680893553
 MonoBehaviour:
