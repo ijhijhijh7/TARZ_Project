@@ -94,7 +94,8 @@ public class ProjectInstaller : MonoInstaller<ProjectInstaller>
 
                 if(innerTable.ContainsKey(type) == false)
                 {
-                    Debug.Log("해당 오디오 클립 못찾음");
+
+                    Debug.Log($"{type}해당 오디오 클립 못찾음");
                 }
 
                 return innerTable[type];
