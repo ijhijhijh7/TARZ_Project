@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShokeWake : MonoBehaviour
+public class ShokeWave : MonoBehaviour
 {
     [SerializeField] private float power;
 
