@@ -115,7 +115,7 @@ public class SoundManager : MonoBehaviour
     public void InstanceSFX(AudioClip clip)
     {
         sfx.PlayOneShot(clip);
-
+    }
     public void PlaySFXMonster(E_Audio type)
     {
         monsterSound.PlayOneShot(clips[type]);
