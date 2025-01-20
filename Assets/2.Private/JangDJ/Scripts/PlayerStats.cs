@@ -118,6 +118,8 @@ public class PlayerStats : IInitializable
     {
         var passives = passive.equipPassive;
 
+        passiveStats = new ProjectInstaller.PlayerBaseStats();
+
         foreach (var item in passives)
         {
             if (item == null)
@@ -126,32 +128,32 @@ public class PlayerStats : IInitializable
             switch (item.statType)
             {
                 case OptionType.MOVESPD:
-                    passiveStats.MovementSpeed = item.statValue;
+                    passiveStats.MovementSpeed += item.statValue;
                     break;
                 case OptionType.ATK:
                     passiveStats.AttackPower += item.statValue;
                     break;
                 case OptionType.ATKSPD:
-                    passiveStats.AttackSpeed = item.statValue;
+                    passiveStats.AttackSpeed += item.statValue;
                     break;
                 case OptionType.HP:
-                    passiveStats.MaxHealth = item.statValue;
+                    passiveStats.MaxHealth += item.statValue;
                     OnChangedMaxHP?.Invoke(MaxHealth);
                     AddHP(item.statValue);
                     break;
                 case OptionType.INVENTORY:
-                    passiveStats.ThrowableItemCapacity = (int)item.statValue;
+                    passiveStats.ThrowableItemCapacity += (int)item.statValue;
                     OnChangedMaxThrowCount?.Invoke(ThrowCapacity);
                     break;
                 case OptionType.GAUGEINC:
-                    passiveStats.ManaAbsorption = item.statValue;
+                    passiveStats.ManaAbsorption += item.statValue;
                     break;
                 case OptionType.STAMINA:
-                    passiveStats.MaxStamina = item.statValue;
+                    passiveStats.MaxStamina += item.statValue;
                     OnChangedMaxStamina?.Invoke(MaxStamina);
                     break;
                 case OptionType.LUCK:
-                    passiveStats.Luck = item.statValue;
+                    passiveStats.Luck += item.statValue;
                     break;
             }
         }
@@ -161,43 +163,45 @@ public class PlayerStats : IInitializable
     {
         var equips = newEquips.manager.equipped;
 
+        equipStats = new ProjectInstaller.PlayerBaseStats();
+
         foreach (var item in equips)
         {
             switch (item.optionType)
             {
                 case OptionType.MOVESPD:
-                    equipStats.MovementSpeed = item.optionValue;
+                    equipStats.MovementSpeed += item.optionValue;
                     Debug.Log($"추가이속 {item.optionValue}");
                     break;
                 case OptionType.ATK:
-                    equipStats.AttackPower = item.optionValue;
+                    equipStats.AttackPower += item.optionValue;
                     Debug.Log($"추가공격력 {item.optionValue}");
                     break;
                 case OptionType.ATKSPD:
-                    equipStats.AttackSpeed = item.optionValue;
+                    equipStats.AttackSpeed += item.optionValue;
                     break;
                 case OptionType.HP:
-                    equipStats.MaxHealth = item.optionValue;
+                    equipStats.MaxHealth += item.optionValue;
                     Debug.Log($"추가체력 {item.optionValue}");
-                    AddHP(item.optionValue);
+                    //AddHP(item.optionValue);
                     OnChangedMaxHP?.Invoke(MaxHealth);
                     break;
                 case OptionType.INVENTORY:
-                    equipStats.ThrowableItemCapacity = (int)item.optionValue;
+                    equipStats.ThrowableItemCapacity += (int)item.optionValue;
                     Debug.Log($"추가인벤 {item.optionValue}");
                     OnChangedMaxThrowCount?.Invoke(ThrowCapacity);
                     break;
                 case OptionType.GAUGEINC:
-                    equipStats.ManaAbsorption = item.optionValue;
+                    equipStats.ManaAbsorption += item.optionValue;
                     Debug.Log($"추가 마나 흡수 {item.optionValue}");
                     break;
                 case OptionType.STAMINA:
-                    equipStats.MaxStamina = item.optionValue;
+                    equipStats.MaxStamina += item.optionValue;
                     Debug.Log($"추가스테 {item.optionValue}");
                     OnChangedMaxStamina?.Invoke(MaxStamina);
                     break;
                 case OptionType.LUCK:
-                    equipStats.Luck = item.optionValue;
+                    equipStats.Luck += item.optionValue;
                     Debug.Log($"추가럭 {item.optionValue}");
                     break;
             }

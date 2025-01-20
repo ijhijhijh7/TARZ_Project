@@ -13,6 +13,10 @@ public class IsInAttackRange : BaseCondition
 
         if (mob.Dist <= mob.Stat.InAttackRange) // InAttackRange
         {
+            if ((E_Monster)mob.MyType == E_Monster.BossMob)
+            {
+                mob.inGameUI.InitEnemyHP(mob.Stat.Health);
+            }
             return TaskStatus.Success;
         }
 
