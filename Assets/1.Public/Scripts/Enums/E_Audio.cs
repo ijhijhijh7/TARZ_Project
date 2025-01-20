@@ -67,7 +67,10 @@ public enum E_Audio
     UI_ShopConfirm,
     UI_Backpack,
     UI_PopUp,
-    UI_GameOver
+    UI_GameOver,
 
     #endregion
+
+    //todo : 테스트 후 삭제 예정
+    test = 999
 }

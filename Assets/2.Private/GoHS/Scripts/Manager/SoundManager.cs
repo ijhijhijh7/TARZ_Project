@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioSource bgm;
     [SerializeField] AudioSource sfx;
     [SerializeField] AudioSource skillSound;
+    [SerializeField] AudioSource monsterSound;
 
     private E_Audio curBGM; 
 
@@ -109,5 +110,10 @@ public class SoundManager : MonoBehaviour
     }
 
     // 위치기반 SFX 음원 재생 
+
+    public void PlaySFXMonster(E_Audio type)
+    {
+        monsterSound.PlayOneShot(clips[type]);
+    }
 }
 
