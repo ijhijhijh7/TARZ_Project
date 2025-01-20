@@ -565,10 +565,11 @@ public class ProjectPlayer : MonoBehaviour, IDamagable
     }
 
     bool isPlayerLive = true;
+   [SerializeField] bool isInvicible = false;
 
     public void TakeHit(float value, bool chargable = false)
     {
-        if(isPlayerLive)
+        if(isPlayerLive && !isInvicible)
         {
             if (stats.AddHP(-value))
             {
@@ -579,6 +580,7 @@ public class ProjectPlayer : MonoBehaviour, IDamagable
             else
             {
                 soundmanager.PlaySFX(E_Audio.Char_Damaged);
+                StartCoroutine(StartInvinvible(1f));
                 return;
             }
         }
@@ -588,4 +590,13 @@ public class ProjectPlayer : MonoBehaviour, IDamagable
         }
 
     }
+
+
+    private IEnumerator StartInvinvible(float duration)
+    {
+        isInvicible = true;
+        yield return new WaitForSeconds(duration);
+        isInvicible = false;
+    }
+
 }
