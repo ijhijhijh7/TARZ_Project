@@ -33,10 +33,27 @@ public enum E_Audio
 
     #region 몬스터
 
-    Base_Attack = 40,
-    Base_Damage,
-
-    Base_Jump,
+    Base_Idle = 40,
+    Base_Encounter = 41,
+    Base_Die = 42,
+    Dog_Idle = 43,
+    Dog_Encounter = 44,
+    Dog_Die = 45,
+    Elite1_Idle = 46,
+    Elite1_Encounter = 47,
+    Elite1_Jump = 48,
+    Elite1_Die = 49,
+    Elite2_Idle = 50,
+    Elite2_Encounter = 51,
+    Elite2_Bomb = 52,
+    Elite2_Die = 53,
+    Boss_Attack = 54,
+    Boss_Encounter = 55,
+    Boss_Skill1_Dash = 56,
+    Boss_Skill2_Bomb = 57,
+    Boss_Gimmick = 58,
+    Boss_Groggy = 59,
+    Boss_Die = 60,
 
     #endregion
 

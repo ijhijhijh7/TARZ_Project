@@ -1049,6 +1049,7 @@ MonoBehaviour:
     canJumpAttack: 0
     jumpHeight: 0
     jumpDuration: 0
+    jumpAttakRange: 0
     changeSpeed: 0
     isGroggyActive: 0
     pillarStates: 
@@ -1061,7 +1062,6 @@ MonoBehaviour:
     dashSpeed: 0
     stopDistanceDash: 0
   type: 0
-  headHeight: 2
   player: {fileID: 0}
   Ongroggy: 0
   reference:
