@@ -11,6 +11,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] AudioSource bgm;
     [SerializeField] AudioSource sfx;
     [SerializeField] AudioSource skillSound;
+    [SerializeField] AudioSource monsterSound;
 
     private E_Audio curBGM; 
 
@@ -114,6 +115,11 @@ public class SoundManager : MonoBehaviour
     public void InstanceSFX(AudioClip clip)
     {
         sfx.PlayOneShot(clip);
+
+    public void PlaySFXMonster(E_Audio type)
+    {
+        monsterSound.PlayOneShot(clips[type]);
+
     }
 }
 
