@@ -262,6 +262,7 @@ MonoBehaviour:
   type: 3
   player: {fileID: 0}
   Ongroggy: 0
+  soundManager: {fileID: 0}
   reference:
     Anim: {fileID: 5319549081127871000}
     Coll: {fileID: 8549264284049050068}

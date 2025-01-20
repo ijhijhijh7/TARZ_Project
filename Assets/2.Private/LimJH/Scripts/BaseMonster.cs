@@ -43,6 +43,7 @@ public class BaseMonster : MonoBehaviour, IDamagable, IPushable, IPooledObject
     [Inject] private PoolManager manager;
     [Inject] private SignalBus signal;
     [Inject] private ProjectInstaller.NormalPrefab prefabs;
+    [Inject] public SoundManager soundManager;
 
     #endregion
     
