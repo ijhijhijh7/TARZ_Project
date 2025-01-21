@@ -25,6 +25,7 @@ public class EliteMonster2 : BaseMonster
         }
 
         GameObject projectile = Instantiate(bombPrefab, transform.position, Quaternion.identity);
+        base.soundManager.PlaySFXMonster(E_Audio.Elite2_Bomb);
         Return();
     }
 }

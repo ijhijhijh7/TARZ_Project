@@ -49,7 +49,6 @@ public class MonsterRotate : BaseAction
         elapsedTime += Time.deltaTime;
         if (elapsedTime >= mob.Stat.MaxRotateTime)
         {
-            Debug.Log("회전 시간 테스트");
             return TaskStatus.Success;
         }
 
