@@ -39,8 +39,6 @@ public class JumpAttack : BaseAction
             Physics.IgnoreCollision(mobCollider, playerCollider, true); // 충돌 비활성화
         }*/
 
-        // 점프 애니메이션 트리거 추가 가능
-        Debug.Log("점프 시작!");
 
         // 점프 공격 불가능 상태로 설정
         if (mob != null)
@@ -73,6 +71,7 @@ public class JumpAttack : BaseAction
         Vector3 currentPosition = Vector3.Lerp(startPosition, targetPosition, progress);
         currentPosition.y += Mathf.Sin(progress * Mathf.PI) * mob.Stat.jumpHeight;
         transform.position = currentPosition;
+        //mob.Reference.Rb.MovePosition(currentPosition);
 
         // 점프 완료
         if (progress >= 1f)
@@ -94,8 +93,6 @@ public class JumpAttack : BaseAction
 
     public override void OnEnd()
     {
-        // 점프 및 공격 종료 작업
-        Debug.Log("점프 공격 완료");
 
         // 점프 공격 쿨타임 시작
         if (jumpMob != null)

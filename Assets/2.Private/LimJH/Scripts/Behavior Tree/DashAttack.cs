@@ -78,6 +78,8 @@ public class DashAttack : BaseAction
     {
         mob.Reference.Anim.Play("Boss_Skill1(Rush)");
 
+        mob.soundManager.PlaySFXMonster(E_Audio.Boss_Skill1_Dash);
+
         dashDirection = (mob.PlayerPos - transform.position).normalized;
 
         Vector3 start = transform.position;

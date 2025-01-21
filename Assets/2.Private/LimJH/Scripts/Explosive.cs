@@ -9,6 +9,15 @@ public class Explosive : MonoBehaviour
     [SerializeField] private float power;
     [SerializeField] GameObject ExplosivePoint;
     public event Action onExplosiveBomb;
+    [SerializeField] private SoundManager soundManager;
+
+    private void Awake()
+    {
+        if (soundManager == null)
+        {
+            soundManager = FindObjectOfType<SoundManager>(); // 씬 전체에서 SoundManager를 찾음
+        }
+    }
 
     private void Start()
     {
@@ -29,7 +38,6 @@ public class Explosive : MonoBehaviour
 
     public void OnTriggerEnter(Collider collider)
     {
-        // 몬스터가 아닌 다른 오브젝트와 충돌 시
         if (collider.CompareTag("Monster"))
         {
             return; // 충돌 무시
@@ -42,6 +50,7 @@ public class Explosive : MonoBehaviour
             onExplosiveBomb?.Invoke();
         }
 
+        soundManager.PlaySFXMonster(E_Audio.Boss_Skill2_Bomb);
         // 현재 오브젝트 파괴
         Destroy(gameObject);
     }

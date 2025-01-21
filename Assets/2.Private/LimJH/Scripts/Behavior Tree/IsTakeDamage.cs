@@ -21,7 +21,6 @@ public class IsTakeDamage : BaseCondition
             // 데미지를 받고 지정된 시간이 지나면 성공 상태 반환
             if (Time.time - damageStartTime >= timerDuration)
             {
-                Debug.Log("시간지남");
                 return TaskStatus.Success;
             }
         }

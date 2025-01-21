@@ -36,7 +36,6 @@ public class ShokeWave : MonoBehaviour
 
         if (collisionTag == "Player")
         {
-            Debug.Log("충격파 플레이어에게 충돌");
 
             IDamagable player = collider.gameObject.GetComponent<IDamagable>();
             if (player != null)

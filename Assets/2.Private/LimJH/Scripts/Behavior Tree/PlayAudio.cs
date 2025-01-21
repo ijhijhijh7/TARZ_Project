@@ -16,7 +16,6 @@ public class PlayAudio : BaseAction
 
 	public override TaskStatus OnUpdate()
 	{
-
 		mob.soundManager.PlaySFXMonster(audioType);
 		return TaskStatus.Success;
 	}
